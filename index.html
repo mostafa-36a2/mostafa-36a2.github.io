@@ -5,8 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mostafa Github page</title>
+    <style>
+        #test1{
+            top: 50%;
+            left: 50%;
+            position: fixed;
+            margin-left: auto;
+            margin-right: auto;
+            width: 1%;
+        }
+    </style>
 </head>
 <body>
     Hello, This is my page!
+    <hr id="test1">
+    <script>
+
+        degrees = 0;
+        hr = document.querySelector("#test1");
+        document.addEventListener("mousemove", function(e){
+            hr.style.transform= `rotate(${degrees}deg)`;
+            color = degrees % 360
+            hr.style.color= `hsl(${color}, 100%, 50%)`;
+            hr.style.backgroundColor= `hsl(${color}, 100%, 50%)`;
+            MAX_SIZE=30;
+            height = Math.abs((degrees/MAX_SIZE)*Math.PI/2);
+            hr.style.height=`${height}px`;
+            hr.style.width=`${height}%`
+            left = 50-height/2
+            hr.style.left=`${left}%`
+            degrees += 1;
+        }); 
+        
+    </script>
 </body>
 </html>
